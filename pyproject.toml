@@ -1,0 +1,32 @@
+[project]
+name = "data-request-tools"
+description = "data request tools for CORDEX"
+classifiers=[
+        "Programming Language :: Python :: 3",
+        "License :: OSI Approved :: MIT License",
+        "Operating System :: OS Independent",
+]
+authors = [
+    { name = "Lars Buntemeyer", email = "lars.buntemeyer@hereon.de" }
+]
+dependencies = [
+    "pandas",
+]
+dynamic = ["version"]
+
+[tool.setuptools]
+packages = ["data_request"]
+
+[project.optional-dependencies]
+dev = [
+    "pre-commit",
+]
+
+[build-system]
+requires = ["setuptools>=64", "setuptools_scm>=8"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools_scm]
+fallback_version = "999"
+version_scheme = "no-guess-dev"
+
