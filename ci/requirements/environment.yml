@@ -4,6 +4,7 @@ channels:
   - nodefaults
 dependencies:
   - pandas
+  - pyyaml
 # for testing
   - pytest
   - pytest-cov
