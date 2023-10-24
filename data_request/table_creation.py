@@ -1,5 +1,8 @@
-# from . import __version__
-version = "0.1.1"
+import json
+import os
+
+cordex_table_prefix = "CORDEX-CMIP6"
+cordex_data_request_table = "https://raw.githubusercontent.com/WCRP-CORDEX/data-request-table/main/CORDEX-CMIP6/data-request.csv"
 
 # columns in cmor tables according to CMIP6
 columns = [
@@ -36,7 +39,7 @@ def create_table_header(name, frequency):
     print(frequency)
     today = date.today()
     header = {
-        "data_specs_version": version,
+        #  "data_specs_version": __version__,
         "cmor_version": "3.5",
         "table_id": f"Table {name}",
         "realm": "atmos",
@@ -77,3 +80,15 @@ def create_cmor_tables(df, groupby=None):
 
     gb = df.groupby(groupby)
     return {name(g): create_cmor_table(name(g), gb.get_group(g)) for g in gb.groups}
+
+
+def table_to_json(table, table_prefix, dir=None):
+    if dir is None:
+        dir = "./"
+    if not os.path.isdir(dir):
+        os.makedirs(dir)
+    table_id = table["Header"]["table_id"].split()[1]
+    filename = os.path.join(dir, f"{table_prefix}_{table_id}.json")
+    print(f"writing: {filename}")
+    with open(filename, "w") as fp:
+        json.dump(table, fp, indent=4)
