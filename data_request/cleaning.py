@@ -192,7 +192,7 @@ def get_jsonparsed_data(url):
     import pooch
 
     filename = pooch.retrieve(url, known_hash=None)
-    with open(filename, "r") as f:
+    with open(filename) as f:
         return json.load(f)
 
 
