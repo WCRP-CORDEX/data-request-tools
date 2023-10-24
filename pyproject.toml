@@ -34,6 +34,7 @@ repository = "https://github.com/WCRP-CORDEX/data-request-tools.git"
 requires = [
     # xarray is need for dynamic version string
     "pandas",
+    "pyyaml",
     "setuptools>=45",
     "wheel",
     "setuptools_scm[toml]>=6.2",
