@@ -55,7 +55,7 @@ jobs:
           python -c "import data_request"
       - name: Run tests
         timeout-minutes: 5
-        run: python -u -m pytest
+        run: python -u -m pytest -s
           --cov=data_request
           --cov-report=xml
           --junitxml=test-results/${{ runner.os }}-${{ matrix.python-version }}.xml
