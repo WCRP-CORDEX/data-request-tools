@@ -22,12 +22,28 @@ gives
 ```
 dict_keys(['1hr', '6hr', 'day', 'fx', 'mon'])
 ```
-
-Create the Coordinates table by searching through the `dimensions` column:
+The tables can be written to CMOR json tables using:
+```python
+for t in cmor_tables.values():
+    dr.table_to_json(t, table_prefix="CORDEX-CMIP6")
+```
+which creates a tables based on the `table_id` in the header:
+```
+writing: ./CORDEX-CMIP6_1hr.json
+writing: ./CORDEX-CMIP6_6hr.json
+writing: ./CORDEX-CMIP6_day.json
+writing: ./CORDEX-CMIP6_fx.json
+writing: ./CORDEX-CMIP6_mon.json
+```
+The coordinates table can also be created by searching through the `dimensions` column:
 ```python
 coords = dr.get_coordinate_table(df)
 ```
 results in
 ```
 found: ['height100m', 'height10m', 'height150m', 'height200m', 'height250m', 'height2m', 'height300m', 'height50m', 'latitude', 'longitude', 'p10', 'p100', 'p1000', 'p150', 'p20', 'p200', 'p250', 'p30', 'p300', 'p400', 'p50', 'p500', 'p600', 'p70', 'p700', 'p750', 'p850', 'p925', 'sdepth', 'time', 'time1']
+```
+and can be written using:
+```python
+dr.table_to_json(coords, "CORDEX-CMIP6", table_id="coordinate")
 ```
