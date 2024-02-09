@@ -64,6 +64,7 @@ jobs:
         uses: codecov/codecov-action@v4
         with:
           file: ./coverage.xml
+          token: ${{ secrets.CODECOV_TOKEN }}
           flags: unittests
           env_vars: RUNNER_OS,PYTHON_VERSION
           name: codecov-umbrella
