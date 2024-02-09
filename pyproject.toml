@@ -137,3 +137,9 @@ module=[
     "xarray.core.pycompat",
 ]
 ignore_missing_imports = true
+
+[tool.coverage.run]
+omit = [
+    "data_request_tools/tests/*",
+    "data_request_tools/cleaning.py",
+]
