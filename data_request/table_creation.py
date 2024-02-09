@@ -82,12 +82,13 @@ def create_cmor_tables(df, groupby=None):
     return {name(g): create_cmor_table(name(g), gb.get_group(g)) for g in gb.groups}
 
 
-def table_to_json(table, table_prefix, dir=None):
+def table_to_json(table, table_prefix, table_id=None, dir=None):
     if dir is None:
         dir = "./"
     if not os.path.isdir(dir):
         os.makedirs(dir)
-    table_id = table["Header"]["table_id"].split()[1]
+    if table_id is None:
+        table_id = table["Header"]["table_id"].split()[1]
     filename = os.path.join(dir, f"{table_prefix}_{table_id}.json")
     print(f"writing: {filename}")
     with open(filename, "w") as fp:
