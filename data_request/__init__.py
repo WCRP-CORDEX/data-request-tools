@@ -2,7 +2,6 @@ from importlib.metadata import version as _get_version
 
 from .cleaning import retrieve_data_request
 from .const import table_prefix
-from .coordinates import get_coordinate_table
 from .table_creation import create_cmor_tables, table_to_json
 
 try:

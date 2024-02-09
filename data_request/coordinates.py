@@ -32,7 +32,7 @@ def create_dimension_entry(dim):
     return dim_table[dim].copy()
 
 
-def get_coordinate_table(df):
+def create_coordinate_table(df):
     dims = get_unique_dims(df)
     dims.sort()
     print(f"found: {dims}")

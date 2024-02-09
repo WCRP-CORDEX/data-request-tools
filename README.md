@@ -37,7 +37,7 @@ writing: ./CORDEX-CMIP6_mon.json
 ```
 The coordinates table can also be created by searching through the `dimensions` column:
 ```python
-coords = dr.get_coordinate_table(df)
+coords = dr.create_coordinate_table(df)
 ```
 results in
 ```
