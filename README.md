@@ -12,7 +12,7 @@ This tools helps to convert a CMIP data request in csv format into a number of C
 import data_request as dr
 import pandas as pd
 
-table = "https://raw.githubusercontent.com/WCRP-CORDEX/data-request-table/sdepth/CORDEX-CMIP6/data-request.csv"
+table = "https://raw.githubusercontent.com/WCRP-CORDEX/data-request-table/main/CORDEX-CMIP6/data-request.csv"
 
 df = pd.read_csv(table).fillna("")
 cmor_tables = dr.create_cmor_tables(df)
