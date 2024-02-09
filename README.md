@@ -6,7 +6,7 @@ Tools to manage a (CORDEX) data request in csv format.
 
 ## Example
 
-This tools helps to convert a CMIP data request in csv format into a number CMOR tables in json format.
+This tools helps to convert a CMIP data request in csv format into a number of CMOR tables in json format.
 
 ```python
 import data_request as dr
