@@ -1,6 +1,7 @@
 # data-request-tools
 
 [![github CI](https://github.com/WCRP-CORDEX/data-request-tools/actions/workflows/ci.yaml/badge.svg)](https://github.com/WCRP-CORDEX/data-request-tools/actions/workflows/ci.yaml)
+[![codecov](https://codecov.io/github/WCRP-CORDEX/data-request-tools/graph/badge.svg?token=UDK6TMSH4R)](https://codecov.io/github/WCRP-CORDEX/data-request-tools)
 
 Tools to manage a (CORDEX) data request in csv format. The main task of this package is to create [CORDEX-CMIP6 create tables](https://github.com/WCRP-CORDEX/cordex-cmip6-cmor-tables/tree/main/Tables))
 from a [data request table in csv format](https://github.com/WCRP-CORDEX/data-request-table/blob/main/CORDEX-CMIP6/data-request.csv). In general, this package should also be useful to
