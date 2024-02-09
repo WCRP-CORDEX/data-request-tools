@@ -151,6 +151,29 @@ time1 = {
     "generic_level_name": "",
 }
 
+sdepth = {
+    "standard_name": "depth",
+    "units": "m",
+    "axis": "Z",
+    "long_name": "depth",
+    "climatology": "",
+    "formula": "",
+    "must_have_bounds": "yes",
+    "out_name": "depth",
+    "positive": "down",
+    "requested": "",
+    "requested_bounds": "",
+    "stored_direction": "increasing",
+    "tolerance": "",
+    "type": "double",
+    "valid_max": "200.0",
+    "valid_min": "0.0",
+    "value": "",
+    "z_bounds_factors": "",
+    "z_factors": "",
+    "bounds_values": "",
+    "generic_level_name": "",
+}
 
 dim_table = {
     "longitude": longitude,
@@ -159,4 +182,5 @@ dim_table = {
     "p": pressure,
     "time": time,
     "time1": time1,
+    "sdepth": sdepth,
 }
