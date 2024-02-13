@@ -1,6 +1,6 @@
 from importlib.metadata import version as _get_version
 
-from .cleaning import retrieve_data_request
+# from .cleaning import retrieve_data_request
 from .const import table_prefix
 from .coordinates import create_coordinate_table
 from .table_creation import create_cmor_tables, table_to_json
@@ -16,6 +16,6 @@ __all__ = [
     "create_cmor_tables",
     "create_coordinate_table",
     "table_prefix",
-    "retrieve_data_request",
+    #    "retrieve_data_request",
     "table_to_json",
 ]
