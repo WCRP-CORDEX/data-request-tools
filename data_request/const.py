@@ -3,6 +3,9 @@ pressure_key_template = "p{value}"
 
 table_prefix = "CORDEX"
 
+conventions = "CF-1.8"
+
+mip_era = "CMIP6"
 
 height = {
     "standard_name": "height",

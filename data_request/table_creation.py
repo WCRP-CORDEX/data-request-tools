@@ -1,6 +1,8 @@
 import json
 import os
 
+from .const import conventions, mip_era
+
 cordex_table_prefix = "CORDEX-CMIP6"
 cordex_data_request_table = "https://raw.githubusercontent.com/WCRP-CORDEX/data-request-table/main/CORDEX-CMIP6/data-request.csv"
 
@@ -40,17 +42,17 @@ def create_table_header(name, frequency):
     today = date.today()
     header = {
         #  "data_specs_version": __version__,
-        "cmor_version": "3.5",
+        # "cmor_version": "3.5",
         "table_id": f"Table {name}",
-        "realm": "atmos",
+        # "realm": "atmos",
         "table_date": today.strftime("%d %B %Y"),
         "missing_value": "1e20",
         "int_missing_value": "-999",
         "product": "model-output",
         "approx_interval": f"{intervals[frequency]}",
-        "generic_levels": "",
-        "mip_era": "CMIP6",
-        "Conventions": "CF-1.7 CMIP-6.2",
+        # "generic_levels": "",
+        "mip_era": mip_era,
+        "Conventions": conventions,
     }
     return header.copy()
 
