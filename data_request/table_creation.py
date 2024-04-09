@@ -9,7 +9,6 @@ cordex_data_request_table = "https://raw.githubusercontent.com/WCRP-CORDEX/data-
 # columns in cmor tables according to CMIP6
 columns = [
     "frequency",
-    "modeling_realm",
     "standard_name",
     "units",
     "cell_methods",
