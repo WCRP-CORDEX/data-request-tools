@@ -3,7 +3,7 @@ pressure_key_template = "p{value}"
 
 table_prefix = "CORDEX"
 
-conventions = "CF-1.8"
+conventions = "CF-1.11"
 
 mip_era = "CMIP6"
 
