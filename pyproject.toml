@@ -22,17 +22,17 @@ dependencies = [
 ]
 dynamic = ["version"]
 
+[project.scripts]
+create-cmor-tables = "data_request_tools.cli:cli"
+
 [project.optional-dependencies]
 all = ["pooch"]
 
 [project.urls]
-homepage = "https://data-request-tools.readthedocs.io"
-documentation = "https://data-request-tools.readthedocs.io"
 repository = "https://github.com/WCRP-CORDEX/data-request-tools.git"
 
 [build-system]
 requires = [
-    # xarray is need for dynamic version string
     "pandas",
     "pyyaml",
     "setuptools>=45",
@@ -42,17 +42,17 @@ requires = [
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools]
-packages = ["data_request"]
+packages = ["data_request_tools"]
 
 [tool.setuptools.exclude-package-data]
-data_request = ["tests/*"]
+data_request_tools = ["tests/*"]
 
 [tool.setuptools.dynamic]
-version = {attr = "data_request.__version__"}
+version = {attr = "data_request_tools.__version__"}
 
 [tool.setuptools_scm]
 fallback_version = "999"
-write_to = "data_request/_version.py"
+write_to = "data_request_tools/_version.py"
 write_to_template= '__version__ = "{version}"'
 tag_regex= "^(?P<prefix>v)?(?P<version>[^\\+]+)(?P<suffix>.*)?$"
 
@@ -86,24 +86,9 @@ select = [
     "UP",
 ]
 
-[tool.ruff.isort]
-known-first-party = ["data_request"]
-known-third-party = [
-    "dask",
-    "matplotlib",
-    "numpy",
-    "pandas",
-    "pint",
-    "pkg_resources",
-    "pytest",
-    "setuptools",
-    "sphinx_autosummary_accessors",
-    "xarray"
-]
-
 [tool.pytest]
 python_files = "test_*.py"
-testpaths = ["data_request/tests"]
+testpaths = ["data_request_tools/tests"]
 
 [tool.rstcheck]
 report_level = "WARNING"
@@ -119,24 +104,6 @@ ignore_directives = [
 
 [tool.nbqa.md]
 mdformat = true
-
-[tool.mypy]
-exclude = "doc|flycheck"
-files = "data_requeqst/"
-show_error_codes = true
-warn_unused_ignores = true
-
-[[tool.mypy.overrides]]
-module=[
-    "cftime",
-    "pandas",
-    "pooch",
-    "matplotlib",
-    "pytest",
-    "shapely.geometry",
-    "xarray.core.pycompat",
-]
-ignore_missing_imports = true
 
 [tool.coverage.run]
 omit = [
