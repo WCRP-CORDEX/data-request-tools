@@ -8,7 +8,7 @@ Tools to manage a (CORDEX) data request in csv format. The main task of this pac
 from a [data request table in csv format](https://github.com/WCRP-CORDEX/data-request-table/blob/main/CORDEX-CMIP6/data-request.csv). In general, this package should also be useful to
 create other tables from other data requests.
 
-## Example
+## API Example
 
 This tools helps to convert a CMIP data request in csv format into a number of CMOR tables in json format.
 
@@ -51,3 +51,13 @@ and can be written using:
 ```python
 dr.table_to_json(coords, "CORDEX-CMIP6", table_id="coordinate")
 ```
+
+## Command line
+
+You can also use the command `create-cmor-tables` in a terminal to create cmor tables from anything that `pandas.read_csv` can understand, e.g.
+
+```
+create-cmor-tables https://raw.githubusercontent.com/WCRP-CORDEX/data-request-table/main/CORDEX-CMIP6/data-request.csv --coords
+```
+
+will do the same as above.
