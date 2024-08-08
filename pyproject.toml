@@ -26,8 +26,6 @@ dynamic = ["version"]
 all = ["pooch"]
 
 [project.urls]
-homepage = "https://data-request-tools.readthedocs.io"
-documentation = "https://data-request-tools.readthedocs.io"
 repository = "https://github.com/WCRP-CORDEX/data-request-tools.git"
 
 [build-system]
@@ -86,21 +84,6 @@ select = [
     "UP",
 ]
 
-[tool.ruff.isort]
-known-first-party = ["data_request"]
-known-third-party = [
-    "dask",
-    "matplotlib",
-    "numpy",
-    "pandas",
-    "pint",
-    "pkg_resources",
-    "pytest",
-    "setuptools",
-    "sphinx_autosummary_accessors",
-    "xarray"
-]
-
 [tool.pytest]
 python_files = "test_*.py"
 testpaths = ["data_request/tests"]
@@ -119,24 +102,6 @@ ignore_directives = [
 
 [tool.nbqa.md]
 mdformat = true
-
-[tool.mypy]
-exclude = "doc|flycheck"
-files = "data_requeqst/"
-show_error_codes = true
-warn_unused_ignores = true
-
-[[tool.mypy.overrides]]
-module=[
-    "cftime",
-    "pandas",
-    "pooch",
-    "matplotlib",
-    "pytest",
-    "shapely.geometry",
-    "xarray.core.pycompat",
-]
-ignore_missing_imports = true
 
 [tool.coverage.run]
 omit = [
