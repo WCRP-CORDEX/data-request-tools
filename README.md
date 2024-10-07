@@ -5,7 +5,7 @@
 [![pre-commit.ci status](https://results.pre-commit.ci/badge/github/WCRP-CORDEX/data-request-tools/main.svg)](https://results.pre-commit.ci/latest/github/WCRP-CORDEX/data-request-tools/main)
 
 Tools to manage a (CORDEX) data request in csv format. The main task of this package is to create [CORDEX-CMIP6 create tables](https://github.com/WCRP-CORDEX/cordex-cmip6-cmor-tables/tree/main/Tables))
-from a [data request table in csv format](https://github.com/WCRP-CORDEX/data-request-table/blob/main/CORDEX-CMIP6/data-request.csv). In general, this package should also be useful to
+from a [data request table in csv format](https://raw.githubusercontent.com/WCRP-CORDEX/data-request-table/refs/heads/main/cmor-table/datasets.csv). In general, this package should also be useful to
 create other tables from other data requests.
 
 ## API Example
@@ -16,7 +16,7 @@ This tools helps to convert a CMIP data request in csv format into a number of C
 import data_request as dr
 import pandas as pd
 
-table = "https://raw.githubusercontent.com/WCRP-CORDEX/data-request-table/main/CORDEX-CMIP6/data-request.csv"
+table = "https://raw.githubusercontent.com/WCRP-CORDEX/data-request-table/refs/heads/main/cmor-table/datasets.csv"
 
 df = pd.read_csv(table).fillna("")
 cmor_tables = dr.create_cmor_tables(df)
@@ -57,7 +57,7 @@ dr.table_to_json(coords, "CORDEX-CMIP6", table_id="coordinate")
 You can also use the command `create-cmor-tables` in a terminal to create cmor tables from anything that `pandas.read_csv` can understand, e.g.
 
 ```
-create-cmor-tables https://raw.githubusercontent.com/WCRP-CORDEX/data-request-table/main/CORDEX-CMIP6/data-request.csv --coords
+create-cmor-tables https://raw.githubusercontent.com/WCRP-CORDEX/data-request-table/refs/heads/main/cmor-table/datasets.csv --coords
 ```
 
 will do the same as above.

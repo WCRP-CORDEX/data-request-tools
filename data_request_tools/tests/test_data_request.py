@@ -2,7 +2,7 @@ import pandas as pd
 
 from .. import create_cmor_tables, create_coordinate_table, table_to_json
 
-cordex_data_request_table = "https://raw.githubusercontent.com/WCRP-CORDEX/data-request-table/main/CORDEX-CMIP6/data-request.csv"
+cordex_data_request_table = "https://raw.githubusercontent.com/WCRP-CORDEX/data-request-table/refs/heads/main/cmor-table/datasets.csv"
 
 
 def test_create_cordex_cmor_table():
