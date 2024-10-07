@@ -16,7 +16,7 @@ This tools helps to convert a CMIP data request in csv format into a number of C
 import data_request as dr
 import pandas as pd
 
-table = "https://raw.githubusercontent.com/WCRP-CORDEX/data-request-table/main/CORDEX-CMIP6/data-request.csv"
+table = "https://raw.githubusercontent.com/WCRP-CORDEX/data-request-table/refs/heads/main/cmor-table/datasets.csv"
 
 df = pd.read_csv(table).fillna("")
 cmor_tables = dr.create_cmor_tables(df)
@@ -57,7 +57,7 @@ dr.table_to_json(coords, "CORDEX-CMIP6", table_id="coordinate")
 You can also use the command `create-cmor-tables` in a terminal to create cmor tables from anything that `pandas.read_csv` can understand, e.g.
 
 ```
-create-cmor-tables https://raw.githubusercontent.com/WCRP-CORDEX/data-request-table/main/CORDEX-CMIP6/data-request.csv --coords
+create-cmor-tables https://raw.githubusercontent.com/WCRP-CORDEX/data-request-table/refs/heads/main/cmor-table/datasets.csv --coords
 ```
 
 will do the same as above.
