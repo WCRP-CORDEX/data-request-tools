@@ -178,6 +178,30 @@ sdepth = {
     "generic_level_name": "",
 }
 
+depth_coord = {
+    "standard_name": "depth",
+    "units": "m",
+    "axis": "Z",
+    "long_name": "ocean depth coordinate",
+    "climatology": "",
+    "formula": "",
+    "must_have_bounds": "yes",
+    "out_name": "lev",
+    "positive": "down",
+    "requested": "",
+    "requested_bounds": "",
+    "stored_direction": "increasing",
+    "tolerance": "",
+    "type": "",
+    "valid_max": "12000.0",
+    "valid_min": "0.0",
+    "value": "",
+    "z_bounds_factors": "",
+    "z_factors": "",
+    "bounds_values": "",
+    "generic_level_name": "olevel",
+}
+
 dim_table = {
     "longitude": longitude,
     "latitude": latitude,
@@ -186,4 +210,5 @@ dim_table = {
     "time": time,
     "time1": time1,
     "sdepth": sdepth,
+    "olevel": depth_coord,
 }
