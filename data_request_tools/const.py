@@ -202,6 +202,33 @@ depth_coord = {
     "generic_level_name": "olevel",
 }
 
+type = {
+    "standard_name": "area_type",
+    "units": "",
+    "axis": "",
+    "long_name": "Sea Ice area type",
+    "climatology": "",
+    "formula": "",
+    "must_have_bounds": "no",
+    "out_name": "type",
+    "positive": "",
+    "requested": "",
+    "requested_bounds": "",
+    "stored_direction": "",
+    "tolerance": "",
+    "type": "character",
+    "valid_max": "",
+    "valid_min": "",
+    "value": "sea_ice",
+    "z_bounds_factors": "",
+    "z_factors": "",
+    "bounds_values": "",
+    "generic_level_name": "",
+}
+
+sitype = type.copy()
+sitype["long_name"] = "Sea Ice area type"
+
 dim_table = {
     "longitude": longitude,
     "latitude": latitude,
@@ -211,4 +238,5 @@ dim_table = {
     "time1": time1,
     "sdepth": sdepth,
     "olevel": depth_coord,
+    "sitype": sitype,
 }
