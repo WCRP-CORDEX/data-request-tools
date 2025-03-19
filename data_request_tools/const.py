@@ -154,6 +154,30 @@ time1 = {
     "generic_level_name": "",
 }
 
+time2 = {
+    "standard_name": "time",
+    "units": "days since ?",
+    "axis": "T",
+    "long_name": "time",
+    "climatology": "yes",
+    "formula": "",
+    "must_have_bounds": "yes",
+    "out_name": "time",
+    "positive": "",
+    "requested": "",
+    "requested_bounds": "",
+    "stored_direction": "increasing",
+    "tolerance": "",
+    "type": "double",
+    "valid_max": "",
+    "valid_min": "",
+    "value": "",
+    "z_bounds_factors": "",
+    "z_factors": "",
+    "bounds_values": "",
+    "generic_level_name": "",
+}
+
 sdepth = {
     "standard_name": "depth",
     "units": "m",
@@ -202,6 +226,33 @@ depth_coord = {
     "generic_level_name": "olevel",
 }
 
+type = {
+    "standard_name": "area_type",
+    "units": "",
+    "axis": "",
+    "long_name": "Sea Ice area type",
+    "climatology": "",
+    "formula": "",
+    "must_have_bounds": "no",
+    "out_name": "type",
+    "positive": "",
+    "requested": "",
+    "requested_bounds": "",
+    "stored_direction": "",
+    "tolerance": "",
+    "type": "character",
+    "valid_max": "",
+    "valid_min": "",
+    "value": "sea_ice",
+    "z_bounds_factors": "",
+    "z_factors": "",
+    "bounds_values": "",
+    "generic_level_name": "",
+}
+
+typesi = type.copy()
+typesi["long_name"] = "Sea Ice area type"
+
 dim_table = {
     "longitude": longitude,
     "latitude": latitude,
@@ -209,6 +260,8 @@ dim_table = {
     "p": pressure,
     "time": time,
     "time1": time1,
+    "time2": time2,
     "sdepth": sdepth,
     "olevel": depth_coord,
+    "typesi": typesi,
 }
