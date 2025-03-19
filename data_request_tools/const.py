@@ -250,8 +250,8 @@ type = {
     "generic_level_name": "",
 }
 
-sitype = type.copy()
-sitype["long_name"] = "Sea Ice area type"
+typesi = type.copy()
+typesi["long_name"] = "Sea Ice area type"
 
 dim_table = {
     "longitude": longitude,
@@ -263,5 +263,5 @@ dim_table = {
     "time2": time2,
     "sdepth": sdepth,
     "olevel": depth_coord,
-    "sitype": sitype,
+    "typesi": typesi,
 }
