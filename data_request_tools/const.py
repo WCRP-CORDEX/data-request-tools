@@ -243,7 +243,7 @@ type = {
     "type": "character",
     "valid_max": "",
     "valid_min": "",
-    "value": "sea_ice",
+    "value": "",
     "z_bounds_factors": "",
     "z_factors": "",
     "bounds_values": "",
@@ -252,6 +252,10 @@ type = {
 
 typesi = type.copy()
 typesi["long_name"] = "Sea Ice area type"
+typesi["value"] = "sea_ice"
+typelake = type.copy()
+typelake["long_name"] = "Lake and Inland Sea area type"
+typelake["value"] = "lake_and_inland_sea"
 
 dim_table = {
     "longitude": longitude,
@@ -264,4 +268,5 @@ dim_table = {
     "sdepth": sdepth,
     "olevel": depth_coord,
     "typesi": typesi,
+    "typelake": typelake,
 }
