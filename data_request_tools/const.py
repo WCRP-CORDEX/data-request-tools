@@ -253,9 +253,14 @@ type = {
 typesi = type.copy()
 typesi["long_name"] = "Sea Ice area type"
 typesi["value"] = "sea_ice"
+
 typelake = type.copy()
 typelake["long_name"] = "Lake and Inland Sea area type"
 typelake["value"] = "lake_and_inland_sea"
+
+typeurban = type.copy()
+typeurban["long_name"] = "Urban area type"
+typeurban["value"] = "urban"
 
 dim_table = {
     "longitude": longitude,
@@ -269,4 +274,5 @@ dim_table = {
     "olevel": depth_coord,
     "typesi": typesi,
     "typelake": typelake,
+    "typeurban": typeurban,
 }
