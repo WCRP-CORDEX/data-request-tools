@@ -22,3 +22,21 @@ def test_create_coordinate_table():
     coords = create_coordinate_table(df)
     table_to_json(coords, "CORDEX-CMIP6", table_id="coordinate")
     return
+
+
+def test_parse_cell_methods():
+    from ..attributes import parse_cell_methods
+
+    cm1 = "area: time: mean"
+    res1 = parse_cell_methods(cm1)
+    assert "area" in res1
+    assert "time" in res1
+    assert res1["area"] == "mean"
+    assert res1["time"] == "mean"
+
+    cm2 = "area: mean where sea time: mean"
+    res2 = parse_cell_methods(cm2)
+    assert "area" in res2
+    assert "time" in res2
+    assert res2["area"] == "mean where sea"
+    assert res2["time"] == "mean"
