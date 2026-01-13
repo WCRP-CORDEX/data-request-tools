@@ -1,6 +1,7 @@
 from .const import table_prefix
 from .coordinates import create_coordinate_table
 from .table_creation import create_cmor_tables, table_to_json
+from .utils import parse_cell_methods
 
 
 def _get_version():
@@ -20,4 +21,5 @@ __all__ = [
     "table_prefix",
     #    "retrieve_data_request",
     "table_to_json",
+    "parse_cell_methods",
 ]

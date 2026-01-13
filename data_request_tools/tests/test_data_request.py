@@ -1,6 +1,7 @@
 import pandas as pd
 
 from .. import create_cmor_tables, create_coordinate_table, table_to_json
+from ..utils import parse_cell_methods
 
 cordex_data_request_table = "https://raw.githubusercontent.com/WCRP-CORDEX/data-request-table/refs/heads/main/cmor-table/datasets.csv"
 
@@ -25,7 +26,6 @@ def test_create_coordinate_table():
 
 
 def test_parse_cell_methods():
-    from ..attributes import parse_cell_methods
 
     cm1 = "area: time: mean"
     res1 = parse_cell_methods(cm1)

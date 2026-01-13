@@ -1,7 +1,21 @@
 import json
 import os
+import re
+
+import yaml
 
 from .const import table_prefix
+
+
+def parse_cell_methods(cm_string):
+    # https://stackoverflow.com/questions/52340963/how-to-insert-a-newline-character-before-a-words-that-contains-a-colon
+    ys = re.sub(r"(\w+):", r"\n\1:", cm_string).strip()
+    d = yaml.safe_load(ys)
+
+    if "area" in d and d.get("area") is None:
+        d["area"] = d["time"]
+
+    return d
 
 
 def table_to_json(table, dir=None, prefix=None):
