@@ -1,8 +1,9 @@
 import argparse
+from warnings import warn
 
 import pandas as pd
 
-from . import create_cmor_tables, create_coordinate_table, table_to_json
+from . import create_cmor_tables, table_to_json
 
 
 def main(table, output, prefix, coords=False):
@@ -14,8 +15,11 @@ def main(table, output, prefix, coords=False):
         table_to_json(t, table_prefix=prefix, dir=output)
 
     if coords is True:
-        t = create_coordinate_table(df)
-        table_to_json(t, prefix, table_id="coordinate", dir=output)
+        warn(
+            "Creating coordinate table from data request is deactivated to avoid overwriting the CMOR coordinates table..."
+        )
+        # t = create_coordinate_table(df)
+        # table_to_json(t, prefix, table_id="coordinate", dir=output)
 
 
 def cli():
