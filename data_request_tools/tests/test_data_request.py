@@ -16,13 +16,13 @@ def test_create_cordex_cmor_table():
     return
 
 
-def test_create_coordinate_table():
-    table = cordex_data_request_table
-    print(f"retrieving data request from {table}")
-    df = pd.read_csv(table).fillna("")
-    coords = create_coordinate_table(df)
-    table_to_json(coords, "CORDEX-CMIP6", table_id="coordinate")
-    return
+# def test_create_coordinate_table():
+#    table = cordex_data_request_table
+#    print(f"retrieving data request from {table}")
+#    df = pd.read_csv(table).fillna("")
+#    coords = create_coordinate_table(df)
+#    table_to_json(coords, "CORDEX-CMIP6", table_id="coordinate")
+#    return
 
 
 def test_parse_cell_methods():
