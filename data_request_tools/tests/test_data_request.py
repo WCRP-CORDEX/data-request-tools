@@ -1,6 +1,6 @@
 import pandas as pd
 
-from .. import create_cmor_tables, create_coordinate_table, table_to_json
+from .. import create_cmor_tables, table_to_json
 from ..utils import parse_cell_methods
 
 cordex_data_request_table = "https://raw.githubusercontent.com/WCRP-CORDEX/data-request-table/refs/heads/main/cmor-table/datasets.csv"
